@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #e7e7e7;
+    display: flex;
+    justify-content: center;
+}
+
+.birthday-button {
+    background: linear-gradient(45deg, #ff4081, #ff80ab);
+    color: white;
+    margin-left: 25%;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 22px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 64, 129, 0.5);
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Glow Effect */
+.birthday-button:hover {
+    box-shadow: 0 0 20px rgba(255, 64, 129, 0.8);
+    transform: scale(1.05);
+}
+
+/* Confetti Animation */
+.birthday-button::before {
+    content: "🎉 🎂 🎁";
+    position: absolute;
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    animation: float 1s infinite alternate ease-in-out;
+}
+
+@keyframes float {
+    from { top: 2px; opacity: 0.8; }
+    to { top: -4px; opacity: 1; }
+}
+
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 50px auto;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.text {
+    flex: 1;
+}
+
+h2 {
+    color: #ff4081;
+    font-size: 24px;
+}
+
+p {
+    color: #333;
+    font-size: 16px;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .block {
+        flex-direction: column;
+        text-align: center;
+    }
+    .reverse {
+        flex-direction: column;
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
